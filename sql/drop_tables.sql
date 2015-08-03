@@ -1,1 +1,2 @@
--- Lisää DROP TABLE lauseet tähän tiedostoon
+DROP TABLE IF EXISTS Employee CASCADE;
+DROP TABLE IF EXISTS Service CASCADE;
