@@ -13,6 +13,9 @@ price INTEGER NOT NULL,
 description varchar(500)
 );
 
-ALTER TABLE Employee ADD serviceID INTEGER REFERENCES Service(id);
-ALTER TABLE Service ADD employeeID INTEGER REFERENCES Employee(id); 
+CREATE TABLE Offered_Services(
+serviceID integer REFERENCES Service,
+employeeID integer REFERENCES Employee,
+PRIMARY KEY (serviceID, employeeID)
+); 
 
