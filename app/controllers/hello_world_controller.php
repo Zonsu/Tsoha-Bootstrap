@@ -18,4 +18,16 @@ class HelloWorldController extends BaseController {
         View::make('suunnitelmat/etusivu.html');
     }
 
+    public static function service_list() {
+        View::make('suunnitelmat/palvelulista.html');
+    }
+
+    public static function employee_list() {
+        View::make('suunnitelmat/tyontekijat.html');
+    }
+
+    public static function employee_show() {
+        View::make('suunnitelmat/tyontekija.html');
+    }
+
 }

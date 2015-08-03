@@ -21,58 +21,51 @@
     </head>
 
     <body>
-        <div class="container" id="keskitetty">
+        <div class="container">
 
-            <!--                <nav class="navbar navbar-default" role="navigation">
-                                <div class="container-fluid">
-            
-            
-                                    <div class="collapse navbar-collapse" id="navigation">
-                                        <ul class="nav navbar-nav">
-                                             Navigaation linkit 
-                                            <li><a href="{{base_path}}">Etusivu</a></li>
-                                            <li><a href="{{base_path}}">Palvelut ja hinnat</a></li>
-                                            <li><a href="{{base_path}}">Henkilökunta</a></li>
-                                            <li><a href="{{base_path}}" class="btn btn-default">Varaa aika</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </nav>
-            -->
             <div class="row otsake"></div>
-            
-            <div class="row" style="background-color: #88A1B3">
+
+            <div class="row linkit">
                 <ul class="nav navbar-nav" id ="navigation">
 
                     <li><a href="{{base_path}}">Etusivu</a></li>
                     <li><a href="{{base_path}}">Palvelut ja hinnat</a></li>
                     <li><a href="{{base_path}}">Henkilökunta</a></li>
-                    <li><a href="{{base_path}}" class="btn btn-default">Varaa aika</a></li>
+                    <li><a href="{{base_path}}">Vapaat ajat</a></li>
+                    <li><a href="{{base_path}}">Kirjaudu</a></li>
+                    <li><a href="{{base_path}}">Rekisteröidy</a></li>
                 </ul>
             </div>
 
-            <div class="row" style="background-color: #AF88B3">
+            <div class="row sivut">
                 <div class="col-md-8">
+                    <div id="keski">
 
-                    <!-- Dynaaminen sisältö tulee tähän -->
-                    {% block content %}{% endblock %}
+                        <!-- Dynaaminen sisältö tulee tähän -->
+                        {% block content %}{% endblock %}
 
-                </div> 
-                <div class="col-md-4">
-                    {% include 'suunnitelmat/sivupalkki.html' %}
+                    </div> 
                 </div>
+
+                <div class="col-md-4">
+                    <div id="sivupalkki">
+
+                        <!-- Sivupallki -->
+                        {% include 'suunnitelmat/sivupalkki.html' %}
+                    </div>
+                </div>
+
+
+                {% block body %}
+                <!-- jQuery -->
+                <script src="{{base_path}}/vendor/jquery.min.js"></script>
+
+                <!-- Bootstrap (skriptitiedosto) -->
+                <script src="{{base_path}}/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+                <!-- Oma skriptitiedostomme -->
+                <script src="{{base_path}}/assets/js/site.js"></script>
+                {% endblock %}
             </div>
-
-            {% block body %}
-            <!-- jQuery -->
-            <script src="{{base_path}}/vendor/jquery.min.js"></script>
-
-            <!-- Bootstrap (skriptitiedosto) -->
-            <script src="{{base_path}}/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-            <!-- Oma skriptitiedostomme -->
-            <script src="{{base_path}}/assets/js/site.js"></script>
-            {% endblock %}
-        </div>
     </body>
 </html>

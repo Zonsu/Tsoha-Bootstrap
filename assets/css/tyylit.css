@@ -7,21 +7,31 @@
     background-color: #D9DEDC;
 }*/
 
-/*#keski{
-    margin: 0;
-    padding: 5px;
-    background-color: #88A1B3;
-}
 
-#sivupalkki {
-    margin: 0;
-    background-color: #AF88B3;
-}*/
 
 .otsake {
     background-image: url(../images/cover_bull.jpg);
+    background-color: #9E7E8D;
     background-size:cover;
     height:200px;
 }
 
+.linkit {
+    background-color: #EEE5B9;
+}
+
+.sivut {
+    background-color: #FAF9E4;
+}
+
+#keski, #sivupalkki{
+  
+    padding: 50px;
+    color: #333030;
+
+}
+#sivupalkki {
+    padding-right: 30px;
+    padding-left: 30px;
+}
 
