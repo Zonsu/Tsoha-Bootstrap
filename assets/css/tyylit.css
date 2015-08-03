@@ -1,0 +1,27 @@
+
+
+/*#keskitetty {
+    height: 1000px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: #D9DEDC;
+}*/
+
+/*#keski{
+    margin: 0;
+    padding: 5px;
+    background-color: #88A1B3;
+}
+
+#sivupalkki {
+    margin: 0;
+    background-color: #AF88B3;
+}*/
+
+.otsake {
+    background-image: url(../images/cover_bull.jpg);
+    background-size:cover;
+    height:200px;
+}
+
+
