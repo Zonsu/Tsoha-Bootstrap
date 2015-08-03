@@ -29,5 +29,8 @@ class HelloWorldController extends BaseController {
     public static function employee_show() {
         View::make('suunnitelmat/tyontekija.html');
     }
+    public static function employee_edit() {
+         View::make('suunnitelmat/muokkaatyontekija.html');
+    }
 
 }

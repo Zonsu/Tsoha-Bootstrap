@@ -21,3 +21,6 @@ $routes->get('/tyontekija/', function() {
 $routes->get('/tyontekija/1', function() {
     HelloWorldController::employee_show();
 });
+$routes->get('/tyontekija/1/edit', function() {
+    HelloWorldController::employee_edit();
+});

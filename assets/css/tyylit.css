@@ -26,12 +26,15 @@
 
 #keski, #sivupalkki{
   
-    padding: 50px;
+    padding: 20px;
     color: #333030;
 
 }
 #sivupalkki {
-    padding-right: 30px;
-    padding-left: 30px;
+
+}
+
+#taulunleveys {
+    width: 80%;
 }
 
