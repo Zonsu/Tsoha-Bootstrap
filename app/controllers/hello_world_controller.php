@@ -1,5 +1,6 @@
 <?php
 
+require 'app/models/Service.php';
 class HelloWorldController extends BaseController {
 
     public static function index() {
@@ -11,6 +12,12 @@ class HelloWorldController extends BaseController {
     public static function sandbox() {
         // Testaa koodiasi täällä
 //        echo 'Hello World!';
+        $service = Service::find(1);
+        $services = Service::all();
+        
+        Kint::dump($service);
+        Kint::dump($services);
+        
         View::make('helloworld.html');
     }
 

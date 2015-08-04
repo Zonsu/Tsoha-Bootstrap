@@ -24,7 +24,12 @@ class Service extends BaseModel {
         $services = array();
 
         foreach ($rows as $row) {
-            $services[] = newService($row);
+            $services[] = new Service(array(
+                'id' => $row['id'],
+                'name' => $row['name'],
+                'price' => $row['price'],
+                'description' => $row['description']
+            ));
         }
         return $services;
     }
@@ -37,20 +42,25 @@ class Service extends BaseModel {
         $row = $query->fetch();
 
         if ($row) {
-            $service = newService($row);
+            $service = new Service(array(
+                'id' => $row['id'],
+                'name' => $row['name'],
+                'price' => $row['price'],
+                'description' => $row['description']
+            ));
         }
         return $service;
     }
 
-    public static function newService($row) {
-
-        $service = new Service(array(
-            'id' => $row['id'],
-            'name' => $row['name'],
-            'price' => $row['price'],
-            'description' => $row['description']
-        ));
-        return $service;
-    }
+//    public static function createService($row) {
+//
+//        $service = new Service(array(
+//            'id' => $row['id'],
+//            'name' => $row['name'],
+//            'price' => $row['price'],
+//            'description' => $row['description']
+//        ));
+//        return $service;
+//    }
 
 }
