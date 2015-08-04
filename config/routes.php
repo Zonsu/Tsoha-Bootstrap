@@ -24,3 +24,8 @@ $routes->get('/tyontekija/1', function() {
 $routes->get('/tyontekija/1/edit', function() {
     HelloWorldController::employee_edit();
 });
+
+$routes->get('/testipalvelut', function() {
+    ServiceController::index();
+});
+

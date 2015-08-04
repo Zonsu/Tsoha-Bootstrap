@@ -17,7 +17,6 @@ class Service extends BaseModel {
     public static function all() {
 
         $query = DB::connection()->prepare('SELECT * FROM Service');
-
         $query->execute();
 
         $rows = $query->fetchAll();
