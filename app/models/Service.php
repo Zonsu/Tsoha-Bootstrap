@@ -24,14 +24,33 @@ class Service extends BaseModel {
         $services = array();
 
         foreach ($rows as $row) {
-            $services[] = new Service(array(
-                'id' => $row['id'],
-                'name' => $row['name'],
-                'price' => $row['price'],
-                'description' => $row['description']
-            ));
+            $services[] = newService($row);
         }
         return $services;
+    }
+
+    public static function find($id) {
+
+        $query = DB::connection()->prepare('SELECT * FROM Service WHERE  id = :id LIMIT 1');
+
+        $query->execute(array('id' => $id));
+        $row = $query->fetch();
+
+        if ($row) {
+            $service = newService($row);
+        }
+        return $service;
+    }
+
+    public static function newService($row) {
+
+        $service = new Service(array(
+            'id' => $row['id'],
+            'name' => $row['name'],
+            'price' => $row['price'],
+            'description' => $row['description']
+        ));
+        return $service;
     }
 
 }
