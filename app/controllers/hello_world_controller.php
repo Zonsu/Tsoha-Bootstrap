@@ -18,7 +18,7 @@ class HelloWorldController extends BaseController {
         Kint::dump($service);
         Kint::dump($services);
         
-        View::make('helloworld.html');
+//        View::make('helloworld.html');
     }
 
     public static function etusivu() {
