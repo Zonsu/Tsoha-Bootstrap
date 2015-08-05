@@ -29,3 +29,7 @@ $routes->get('/testipalvelut', function() {
     ServiceController::index();
 });
 
+$routes->get('/testipalvelut/:id', function($id){
+    ServiceController::show($id);
+});
+

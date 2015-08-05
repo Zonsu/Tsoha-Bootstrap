@@ -6,6 +6,12 @@ class ServiceController extends BaseController{
         
         View::make('service/index.html', array('services' => $services));
     }
+    
+    public static function show($id) {
+        $service = Service::find($id);
+        
+        View::make('service/show.html', array('service' => $service));
+    }
 }
 
 
