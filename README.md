@@ -9,7 +9,13 @@ Yleisiä linkkejä:
 
 * [Aihekuvaus](http://advancedkittenry.github.io/suunnittelu_ja_tyoymparisto/aiheet/Parturi-Kampaamo.html)
 
-## Käyttöliittymän suunnitelmia
+## Viikko 3: Palveluiden listaus, lisäys ja tarkastelu
+
+* [Listaus](http://joqpaavo.users.cs.helsinki.fi/tsoha/palvelut)
+* [Lisäys](http://joqpaavo.users.cs.helsinki.fi/tsoha/palvelut/new)
+* [Tarkastelu](http://joqpaavo.users.cs.helsinki.fi/palvelut/11)
+
+## Viikko 2: Käyttöliittymän suunnitelmia
 
 Erittäin karkeaa!
 
