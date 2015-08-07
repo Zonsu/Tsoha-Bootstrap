@@ -1,8 +1,5 @@
 <?php
 
-$routes->get('/', function() {
-    HelloWorldController::index();
-});
 
 $routes->get('/hiekkalaatikko', function() {
     HelloWorldController::sandbox();
@@ -25,7 +22,7 @@ $routes->get('/tyontekija/1/edit', function() {
     HelloWorldController::employee_edit();
 });
 
-$routes->get('/testipalvelut', function() {
+$routes->get('/', function() {
     ServiceController::index();
 });
 

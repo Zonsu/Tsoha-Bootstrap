@@ -6,6 +6,7 @@
  *
  * @author johanna
  */
+
 class Service extends BaseModel {
 
     public $id, $name, $price, $description;
@@ -15,7 +16,7 @@ class Service extends BaseModel {
     }
 
     public static function all() {
-
+     
         $query = DB::connection()->prepare('SELECT * FROM Service');
         $query->execute();
 
@@ -50,6 +51,8 @@ class Service extends BaseModel {
         }
         return $service;
     }
+    
+    
 
 //    public static function createService($row) {
 //
