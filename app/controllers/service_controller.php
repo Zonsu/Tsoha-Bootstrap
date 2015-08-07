@@ -30,7 +30,7 @@ class ServiceController extends BaseController {
         
         $service->save();
         
-        Redirect::to('/testipalvelut/' . $service->id, array('message' => 'Uusi palvelu luotu!'));
+        Redirect::to('/palvelut/' . $service->id, array('message' => 'Uusi palvelu luotu!'));
     }
 
 }

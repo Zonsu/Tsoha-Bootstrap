@@ -1,10 +1,10 @@
-{% extends "suunnitelmat/pohja.html" %}
+{% extends "frame.html" %}
 {% block content %}
 <div>  
     
-    <div><a href="{{base_path}}/" class="btn btn-default btn-xs nappula"><< Takaisin</a></div>
+    <div><a href="{{base_path}}/palvelut" class="btn btn-default btn-xs nappula"><< Takaisin</a></div>
     
-    <form method ="post" action="{{base_path}}/testipalvelut">
+    <form method ="post" action="{{base_path}}/palvelut/store">
 
         <div class="form-group">
             <label>Palvelun nimi</label>
