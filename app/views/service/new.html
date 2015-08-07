@@ -1,0 +1,27 @@
+{% extends "suunnitelmat/pohja.html" %}
+{% block content %}
+<div>  
+    <form>
+
+        <div class="form-group">
+            <label>Palvelun nimi:</label>
+            <input type="text" class="form-control" value="Jack Bauer">
+        </div>
+
+        <div class="form-group">
+            <label>Hinta:</label>
+            <input type="text" class="form-control" value="1.4.2013">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">
+                Työntekijä
+            </label>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Tallenna</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
