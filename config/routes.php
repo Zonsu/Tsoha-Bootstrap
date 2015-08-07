@@ -26,8 +26,12 @@ $routes->get('/', function() {
     ServiceController::index();
 });
 
+$routes->get('/testipalvelut', function() {
+    ServiceController::store(); 
+});
+
 $routes->get('/testipalvelut/new', function() {
-    ServiceController::form();
+    ServiceController::create();
 });
 
 $routes->get('/testipalvelut/:id', function($id){

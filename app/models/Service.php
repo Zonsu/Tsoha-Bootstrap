@@ -6,7 +6,6 @@
  *
  * @author johanna
  */
-
 class Service extends BaseModel {
 
     public $id, $name, $price, $description;
@@ -16,7 +15,7 @@ class Service extends BaseModel {
     }
 
     public static function all() {
-     
+
         $query = DB::connection()->prepare('SELECT * FROM Service');
         $query->execute();
 
@@ -51,8 +50,16 @@ class Service extends BaseModel {
         }
         return $service;
     }
-    
-    
+
+    public function save() {
+        $query = DB::connection()->prepare('INSERT INTO Service (name, price, description) VALUES (:name, :price, :description) RETURNING id');
+        
+        $query->execute(array('name' => $this->name, 'price' => $this->price, 'description' => $this->description));
+        
+        $row = $query->fetch();
+        
+        $htis->id = $row['id'];
+    }
 
 //    public static function createService($row) {
 //
@@ -64,5 +71,4 @@ class Service extends BaseModel {
 //        ));
 //        return $service;
 //    }
-
 }
