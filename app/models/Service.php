@@ -58,7 +58,7 @@ class Service extends BaseModel {
         
         $row = $query->fetch();
         
-        $htis->id = $row['id'];
+        $this->id = $row['id'];
     }
 
 //    public static function createService($row) {

@@ -26,7 +26,7 @@ $routes->get('/', function() {
     ServiceController::index();
 });
 
-$routes->get('/testipalvelut', function() {
+$routes->post('/testipalvelut', function() {
     ServiceController::store(); 
 });
 
