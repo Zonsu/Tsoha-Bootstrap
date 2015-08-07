@@ -12,6 +12,10 @@ class ServiceController extends BaseController{
         
         View::make('service/show.html', array('service' => $service));
     }
+    
+    public static function form() {
+        View::make('service/new.html');
+    }
 }
 
 
