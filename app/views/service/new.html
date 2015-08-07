@@ -1,6 +1,9 @@
 {% extends "suunnitelmat/pohja.html" %}
 {% block content %}
 <div>  
+    
+    <div><a href="{{base_path}}/" class="btn btn-default btn-xs nappula"><< Takaisin</a></div>
+    
     <form method ="post" action="{{base_path}}/testipalvelut">
 
         <div class="form-group">
@@ -33,7 +36,7 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Tallenna</button>
+            <button type="submit" class="btn btn-info">Tallenna</button>
         </div>
     </form>
 </div>
