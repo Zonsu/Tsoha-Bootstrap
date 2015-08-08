@@ -21,52 +21,30 @@
     </head>
 
     <body>
-        <div class="container">
+        <div id="sivut">
 
-            <div class="row otsake"></div>
-
-            <div class="row linkit">
-                <ul class="nav navbar-nav" id ="navigation">
-
-                    <li><a href="{{base_path}}">Etusivu</a></li>
-                    <li><a href="{{base_path}}/palvelut">Palvelut ja hinnat</a></li>
-                    <li><a href="{{base_path}}/henkilokunta">Henkilökunta</a></li>
-                    <li><a href="{{base_path}}/varaa">Vapaat ajat</a></li>
-
-                    <li><a href="{{base_path}}/kirjaudu">Kirjaudu</a></li>
-                    <li><a href="{{base_path}}/rekisteroidy">Rekisteröidy</a></li>
-                </ul>
+            <div id="otsake"> {% include 'sidebar.html' %}
             </div>
 
-            <div class="row sivut">
-                <div class="col-md-8">
-                    <div id="keski">
-
-                        <!-- Dynaaminen sisältö tulee tähän -->
-                        {% block content %}{% endblock %}
-
-                    </div> 
-                </div>
-
-                <div class="col-md-4">
-                    <div id="sivupalkki">
-
-                        <!-- Sivupallki -->
-                        {% include 'sidebar.html' %}
-                    </div>
-                </div>
-
-
-                {% block body %}
-                <!-- jQuery -->
-                <script src="{{base_path}}/vendor/jquery.min.js"></script>
-
-                <!-- Bootstrap (skriptitiedosto) -->
-                <script src="{{base_path}}/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-                <!-- Oma skriptitiedostomme -->
-                <script src="{{base_path}}/assets/js/site.js"></script>
-                {% endblock %}
+            <div id="linkit">
+                {% include 'nav.html' %}
             </div>
+
+            <div id="keski">
+                {% block content %}{% endblock %}
+            </div> 
+
+
+            {% block body %}
+            <!-- jQuery -->
+            <script src="{{base_path}}/vendor/jquery.min.js"></script>
+
+            <!-- Bootstrap (skriptitiedosto) -->
+            <script src="{{base_path}}/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+            <!-- Oma skriptitiedostomme -->
+            <script src="{{base_path}}/assets/js/site.js"></script>
+            {% endblock %}
+        </div>
     </body>
 </html>

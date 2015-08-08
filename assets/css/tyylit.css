@@ -1,42 +1,67 @@
 
 
-/*#keskitetty {
-    height: 1000px;
-    margin-left: 100px;
-    margin-right: 100px;
-    background-color: #D9DEDC;
-}*/
+html, body {
+    min-height: 100%;
+    background-color: #abb89a;
+    padding: 0;
+    margin: 0;
+}
 
+#sivut {
 
+    background-color: #E0D1B0;
+    //    padding: 50px 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-right-width: 10px;
+    border-left-width: 10px;
+    border-color: #080808;
+    border-style: none solid;
 
-.otsake {
-    background-image: url(../images/cover_bull.jpg);
+}
+
+#otsake {
     background-color: #9E7E8D;
-    background-size:cover;
-    height:200px;
-}
-
-.linkit {
-    background-color: #EEE5B9;
-}
-
-.sivut {
-    background-color: #FAF9E4;
-}
-
-#keski, #sivupalkki{
-  
-    padding: 20px;
-    color: #333030;
-
-}
-#sivupalkki {
+    height: 30%;
+    position: relative;
 
 }
 
-#taulunleveys {
-    width: 80%;
+#otsikko {
+    width: 100%;
+    position: relative;
+    padding-bottom: 5%;
+    font-size: 200%;
 }
+
+#otsaketeksti {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+#linkit {
+    padding: 5px;
+    background-color: #FFFFFF;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    height: 15%;
+}
+
+
+#keski{
+    position: absolute;
+    top: 40%;
+    padding: 30px;
+    background-color: #FFFFFF;
+    min-height: 100%;
+}
+
 
 .nappula {
     margin-bottom: 10px;
