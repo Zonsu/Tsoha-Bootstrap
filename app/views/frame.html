@@ -33,18 +33,20 @@
             <div id="keski">
                 {% block content %}{% endblock %}
             </div> 
-
-
-            {% block body %}
-            <!-- jQuery -->
-            <script src="{{base_path}}/vendor/jquery.min.js"></script>
-
-            <!-- Bootstrap (skriptitiedosto) -->
-            <script src="{{base_path}}/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-            <!-- Oma skriptitiedostomme -->
-            <script src="{{base_path}}/assets/js/site.js"></script>
-            {% endblock %}
         </div>
+        
+        <div id="viiva-vasen"><div id="viiva-oikea">
+        </div>
+
+        {% block body %}
+        <!-- jQuery -->
+        <script src="{{base_path}}/vendor/jquery.min.js"></script>
+
+        <!-- Bootstrap (skriptitiedosto) -->
+        <script src="{{base_path}}/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Oma skriptitiedostomme -->
+        <script src="{{base_path}}/assets/js/site.js"></script>
+        {% endblock %}
     </body>
 </html>

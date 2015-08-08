@@ -2,13 +2,14 @@
 
 html, body {
     min-height: 100%;
-    background-color: #abb89a;
+    background-color: #c7d4b7;
     padding: 0;
     margin: 0;
 }
 
-#sivut {
+#sivut{
 
+    min-height: 100%;
     background-color: #E0D1B0;
     //    padding: 50px 0;
     position: absolute;
@@ -17,47 +18,81 @@ html, body {
     width: 60%;
     margin-left: 20%;
     margin-right: 20%;
-    border-right-width: 10px;
-    border-left-width: 10px;
-    border-color: #080808;
-    border-style: none solid;
+    z-index: 1;
+}
 
+#viiva-vasen {
+    position: fixed;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+
+    width: 20%;
+    margin-left: 0;
+
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-color: #080808;
+    border-style: none solid none none;
+}
+#viiva-oikea {
+    position: fixed;
+    min-height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+
+    width: 20%;
+    margin-right: 0;
+
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-color: #080808;
+    border-style: none none none solid;
 }
 
 #otsake {
-    background-color: #9E7E8D;
+    background-color: #FFFFFF;
     height: 30%;
     position: relative;
 
 }
 
 #otsikko {
+    font-family: "Times New Roman", Times, serif;
+    position:relative;
+    bottom: 20px;
     width: 100%;
-    position: relative;
-    padding-bottom: 5%;
-    font-size: 200%;
+    font-size: 250%;
 }
 
-#otsaketeksti {
-    width: 100%;
+#otsakepaikka {
     position: absolute;
+    width: 100%;
     bottom: 10px;
 }
 
+#otsaketyylit {
+    color: #5e5e5e;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 8s0%;
+}
+
 #linkit {
-    padding: 5px;
     background-color: #FFFFFF;
     width: 100%;
-    position: absolute;
-    top: 30%;
-    height: 15%;
+    height: 10%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 #keski{
-    position: absolute;
-    top: 40%;
-    padding: 30px;
+    position: relative;
+    padding: 40px;
     background-color: #FFFFFF;
     min-height: 100%;
 }
