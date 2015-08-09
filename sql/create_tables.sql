@@ -4,7 +4,9 @@ id SERIAL PRIMARY KEY,
 name varchar(30) NOT NULL,
 startingDate DATE,
 special varchar(120),
-introduction varchar(500)
+introduction varchar(500),
+management boolean DEFAULT FALSE
+
 );
 
 CREATE TABLE Service(
@@ -47,12 +49,5 @@ date DATE NOT NULL,
 start TIME NOT NULL,
 endtime TIME NOT NULL,
 message varchar(1000)
-);
-
-
-CREATE TABLE Access(
-id SERIAL PRIMARY KEY,
-employeeID Integer REFERENCES Employee ON DELETE CASCADE,
-access boolean DEFAULT FALSE
 );
 

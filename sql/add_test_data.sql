@@ -1,7 +1,7 @@
 INSERT INTO Employee (name, startingDate, special, introduction) VALUES ('Jack Bauer', '2013-04-01', 'Parturipalvelut', 'Ei koskaan anna periksi');
 INSERT INTO Employee (name, startingDate, special, introduction) VALUES ('Elmo', '2011-06-22', 'Värjäys', 'Pehmo');
 INSERT INTO Employee (name, startingDate, special, introduction) VALUES ('Jossu', '2015-07-03', 'Opiskelijatyöt', 'Noobi');
-INSERT INTO Employee (name, startingDate, special, introduction) VALUES ('Elmo', '2011-06-22', 'Värjäys', 'Pehmo');
+INSERT INTO Employee (name, startingDate, special, introduction, management) VALUES ('Elmo', '2011-06-22', 'Värjäys', 'Pehmo', 'true');
 
 
 INSERT INTO Service (name, price, description) VALUES ('Hiustenleikkuu - Lyhyet', '15', 'Lyhyiden hiusten leikkuu ja mallin palautus');
@@ -25,6 +25,6 @@ INSERT INTO Workshift (date, start, endtime, employeeID) VALUES ('2015-08-04','0
 
 INSERT INTO Reservation (clientID, serviceID, employeeID, date, start, endtime, message) VALUES ('1', '2', '3','2015-08-04','12:00:00','13:00:00','HIRVEET TÖYHTÖT HALUUN');
 
-INSERT INTO Access (employeeId, access) VALUES ('3', 'true'); 
+
 
 
