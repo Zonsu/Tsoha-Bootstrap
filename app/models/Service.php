@@ -23,12 +23,7 @@ class Service extends BaseModel {
         $services = array();
 
         foreach ($rows as $row) {
-            $services[] = new Service(array(
-                'id' => $row['id'],
-                'name' => $row['name'],
-                'price' => $row['price'],
-                'description' => $row['description']
-            ));
+            $services[] = Service::createService($row);
         }
         return $services;
     }
@@ -41,34 +36,30 @@ class Service extends BaseModel {
         $row = $query->fetch();
 
         if ($row) {
-            $service = new Service(array(
-                'id' => $row['id'],
-                'name' => $row['name'],
-                'price' => $row['price'],
-                'description' => $row['description']
-            ));
+            $service = Service::createService($row);
         }
         return $service;
     }
 
     public function save() {
         $query = DB::connection()->prepare('INSERT INTO Service (name, price, description) VALUES (:name, :price, :description) RETURNING id');
-        
+
         $query->execute(array('name' => $this->name, 'price' => $this->price, 'description' => $this->description));
-        
+
         $row = $query->fetch();
-        
+
         $this->id = $row['id'];
     }
 
-//    public static function createService($row) {
-//
-//        $service = new Service(array(
-//            'id' => $row['id'],
-//            'name' => $row['name'],
-//            'price' => $row['price'],
-//            'description' => $row['description']
-//        ));
-//        return $service;
-//    }
+    public static function createService($row) {
+
+        $service = new Service(array(
+            'id' => $row['id'],
+            'name' => $row['name'],
+            'price' => $row['price'],
+            'description' => $row['description']
+        ));
+        return $service;
+    }
+
 }
