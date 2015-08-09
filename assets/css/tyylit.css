@@ -14,6 +14,7 @@ html, body {
     background-color: #FFFFFF;
     padding: 0;
     margin: 0;
+    color: #364d53;
 }
 
 #sivut{
@@ -122,6 +123,8 @@ font-size: 150%;
 #keski{
     position: relative;
     padding: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
     background-color: #FFFFFF;
     min-height: 100%;
 }
