@@ -64,23 +64,19 @@ class Service extends BaseModel {
     }
 
     public function update() {
-        $query = DB::connection()->prepare('UPDATE Service (name, price, description) VALUES (:name, :price, :description) RETURNING id');
+        $query = DB::connection()->prepare('UPDATE Service SET name =:name, price=:price, description=:description WHERE id=:id');
 
-        $query->execute(array('name' => $this->name, 'price' => $this->price, 'description' => $this->description));
-
-        $row = $query->fetch();
-
-        $this->id = $row['id'];
+        $query->execute(array('name' => $this->name, 'price' => $this->price, 'description' => $this->description, 'id' => $this->id));
     }
 
-    public function destroy($id){
-       $query = DB::connection()->prepare('DELETE FROM Service WHERE id = :id');
-       $query->execute(array(
-           'id' => $id));
+    public function destroy($id) {
+        $query = DB::connection()->prepare('DELETE FROM Service WHERE id = :id');
+        $query->execute(array(
+            'id' => $id));
     }
 
     public function validate_name() {
-        
+
         $metodi = 'validate_string_length';
         $errors = $this->$metodi('Nimi', $this->name, 3);
 
