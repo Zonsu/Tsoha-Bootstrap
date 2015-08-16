@@ -14,6 +14,7 @@ class HelloWorldController extends BaseController {
         $service = Service::find(1);
         $services = Service::all();
         $employees = Employee::all();
+        $employee = Employee::find(1);
 
         $service2 = new Service(array(
             'name' => 'aasdd',
@@ -22,6 +23,7 @@ class HelloWorldController extends BaseController {
         ));
         $errors = $service2->errors();
 
+        Kint::dump($employee);
         Kint::dump($employees);
         Kint::dump($service);
         Kint::dump($services);

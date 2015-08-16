@@ -6,7 +6,7 @@
       if(isset($_SESSION['employee'])) {
           $employee_id = $_SESSION['employee'];
           
-          $employee = Employee::find($id);
+          $employee = Employee::find($employee_id);
           
           return $employee;
           
