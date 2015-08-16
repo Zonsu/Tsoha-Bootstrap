@@ -39,4 +39,38 @@ class ServiceController extends BaseController {
         }
     }
 
+    public static function edit($id) {
+        $service = Service::find($id);
+        View::make('service/edit.html', array('attributes' => $service));
+    }
+
+    public static function update($id) {
+        $params = $_POST;
+
+        $attributes = array(
+            'id' => $id,
+            'name' => $params['name'],
+            'price' => $params['price'],
+            'description' => $params['description']
+        );
+
+        $service = new Service($attributes);
+        $errors = $service->errors();
+
+        if (count($errors) > 0) {
+            View::make('service/edit.html', array('errors' => $errors, 'attributes' => $attributes));
+        } else {
+            $service->update();
+            Redirect::to('/palvelut/' . $service->id, array('message' => "Palveluun tehdyt muutokset tallennettu!"));
+        }
+    }
+
+    public static function destroy($id) {
+
+        $service = new Service(array('id' => $id));
+        $service->destroy();
+
+        Redirect::to('/palvelut', array('message' => 'Palvelu poistettu onnistuneesti!'));
+    }
+
 }

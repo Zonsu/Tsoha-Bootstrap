@@ -41,6 +41,16 @@ $routes->get('/palvelut/:id', function($id) {
     ServiceController::show($id);
 });
 
+$routes->get('/palvelut/:id/edit', function($id) {
+    ServiceController::edit($id);
+});
+$routes->post('/palvelut/:id/edit', function($id) {
+    ServiceController::update($id);
+});
+
+$routes->post('/palvelut/:id/destroy', function($id) {
+    ServiceController::destroy($id);
+});
 
 
 
