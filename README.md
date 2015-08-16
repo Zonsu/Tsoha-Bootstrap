@@ -9,6 +9,16 @@ Yleisiä linkkejä:
 
 * [Aihekuvaus](http://advancedkittenry.github.io/suunnittelu_ja_tyoymparisto/aiheet/Parturi-Kampaamo.html)
 
+### Viikko 4: Palvelun poisto ja muokkaus, validointi,  henkilökunnan kirjautuminen
+
+Tunnukset joilla management oikeudet:
+Käyttäjätunnus: munkki
+Salasana: pulla
+
+Tunnukset joilla ei oikeuksia:
+Käyttäjätunnus: munkki2
+Salasana: pulla2
+
 ### Viikko 3: Palveluiden listaus, lisäys ja tarkastelu
 
 * [Listaus](http://joqpaavo.users.cs.helsinki.fi/tsoha/palvelut)
