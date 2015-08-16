@@ -12,6 +12,7 @@ class Service extends BaseModel {
 
     public function __construct($attributes) {
         parent::__construct($attributes);
+        $this->validators = array('validate_name', 'validate_price', 'validate_description');
     }
 
     public static function all() {
@@ -60,6 +61,27 @@ class Service extends BaseModel {
             'description' => $row['description']
         ));
         return $service;
+    }
+
+    public function validate_name() {;
+        $metodi = 'validate_string_length';
+        $errors = $this->$metodi('Nimi', $this->name, 3);
+
+        return $errors;
+    }
+
+    public function validate_description() {
+        $metodi = 'validate_string_length';
+        $errors = $this->$metodi('Kuvaus', $this->description, 5);
+
+        return $errors;
+    }
+
+    public function validate_price() {
+        $metodi = 'validate_int';
+        $errors = $this->$metodi('Hinta', $this->price);
+
+        return $errors;
     }
 
 }

@@ -22,15 +22,21 @@ class ServiceController extends BaseController {
 
         $params = $_POST;
 
-        $service = new Service(array(
+        $attributes = array(
             'name' => $params['name'],
             'price' => $params['price'],
             'description' => $params['description']
-        ));
-        
-        $service->save();
-        
-        Redirect::to('/palvelut/' . $service->id, array('message' => 'Uusi palvelu luotu!'));
+        );
+
+        $service = new Service($attributes);
+        $errors = $service->errors();
+
+        if (count($errors) == 0) {
+            $service->save();
+            Redirect::to('/palvelut/' . $service->id, array('message' => 'Uusi palvelu luotu!'));
+        } else {
+            View::make('service/new.html', array('errors' => $errors, 'attributes' => $attributes));
+        }
     }
 
 }

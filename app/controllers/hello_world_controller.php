@@ -1,23 +1,30 @@
 <?php
 
 require 'app/models/Service.php';
+
 class HelloWorldController extends BaseController {
 
     public static function index() {
-        // make-metodi renderöi app/views-kansiossa sijaitsevia tiedostoja
-        //  View::make('home.html');
+
         echo 'Tämä on etusivu!';
     }
 
     public static function sandbox() {
-        // Testaa koodiasi täällä
-//        echo 'Hello World!';
+
         $service = Service::find(1);
         $services = Service::all();
-        
+
+        $service2 = new Service(array(
+            'name' => 'aasdd',
+            'price' => "2",
+            'description' => "asfafaf"
+        ));
+        $errors = $service2->errors();
+
         Kint::dump($service);
         Kint::dump($services);
-        
+        Kint::dump($errors);
+
 //        View::make('helloworld.html');
     }
 
@@ -36,8 +43,9 @@ class HelloWorldController extends BaseController {
     public static function employee_show() {
         View::make('suunnitelmat/tyontekija.html');
     }
+
     public static function employee_edit() {
-         View::make('suunnitelmat/muokkaatyontekija.html');
+        View::make('suunnitelmat/muokkaatyontekija.html');
     }
 
 }
