@@ -49,6 +49,7 @@ $routes->post('/palvelut/:id/edit', function($id) {
 });
 
 $routes->post('/palvelut/:id/destroy', function($id) {
+    print("asdads");
     ServiceController::destroy($id);
 });
 

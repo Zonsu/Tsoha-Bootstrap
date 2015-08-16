@@ -68,7 +68,7 @@ class ServiceController extends BaseController {
     public static function destroy($id) {
 
         $service = new Service(array('id' => $id));
-        $service->destroy();
+        $service->destroy($id);
 
         Redirect::to('/palvelut', array('message' => 'Palvelu poistettu onnistuneesti!'));
     }

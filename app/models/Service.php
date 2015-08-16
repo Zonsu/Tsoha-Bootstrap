@@ -80,7 +80,7 @@ class Service extends BaseModel {
     }
 
     public function validate_name() {
-        ;
+        
         $metodi = 'validate_string_length';
         $errors = $this->$metodi('Nimi', $this->name, 3);
 
