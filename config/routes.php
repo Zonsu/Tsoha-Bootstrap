@@ -54,8 +54,15 @@ $routes->post('/palvelut/:id/destroy', function($id) {
 });
 
 
+//login
 
+$routes->post('/employeelogin', function() {
+    EmployeeController::employee_login();
+});
 
+$routes->get('/employee/login', function() {
+    EmployeeController::employee_login_page();
+});
 
 
 

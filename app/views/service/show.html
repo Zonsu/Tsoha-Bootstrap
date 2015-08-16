@@ -1,5 +1,7 @@
+
 {% extends "frame.html" %}
 {% block content %}
+{% import "macros/forms.html" as forms %}
 <div>
     <div class="message">{{message}}</div>
 
@@ -13,11 +15,8 @@
     </div>
 
     <div>
-        <a href="{{base_path}}/palvelut/{{service.id}}/edit" class="btn btn-info btn-xs nappula">Muokkaa</a>
-        
-        <form method="post" action="{{base_path}}/palvelut/{{service.id}}/destroy" style="display: inline-block">
-            <button type="submit" class="btn btn-warning btn-xs nappula">Poista</button>
-        </form>
+        <a href="{{base_path}}/palvelut/{{service.id}}/edit" class="btn btn-info btn-xs nappula">Muokkaa</a>        
+        {{forms.destroy_button("#{base_path}/palvelut/#{service.id}/destroy")}}
     </div>
 </div>
 

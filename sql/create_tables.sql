@@ -5,7 +5,9 @@ name varchar(30) NOT NULL,
 startingDate DATE,
 special varchar(120),
 introduction varchar(500),
-management boolean DEFAULT FALSE
+management boolean DEFAULT FALSE,
+username varchar(20),
+password varchar(50)
 
 );
 

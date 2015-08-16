@@ -1,7 +1,7 @@
-INSERT INTO Employee (name, startingDate, special, introduction) VALUES ('Jack Bauer', '2013-04-01', 'Parturipalvelut', 'Ei koskaan anna periksi');
-INSERT INTO Employee (name, startingDate, special, introduction) VALUES ('Elmo', '2011-06-22', 'Värjäys', 'Pehmo');
-INSERT INTO Employee (name, startingDate, special, introduction) VALUES ('Jossu', '2015-07-03', 'Opiskelijatyöt', 'Noobi');
-INSERT INTO Employee (name, startingDate, special, introduction, management) VALUES ('Elmo', '2011-06-22', 'Värjäys', 'Pehmo', 'true');
+INSERT INTO Employee (name, startingDate, special, introduction, username, password, management) VALUES ('Jack Bauer', '2013-04-01', 'Parturipalvelut', 'Ei koskaan anna periksi', 'munkki', 'pulla', 'true');
+INSERT INTO Employee (name, startingDate, special, introduction, username, password) VALUES ('Elmo', '2011-06-22', 'Värjäys', 'Pehmo', 'munkki1', 'pulla1');
+INSERT INTO Employee (name, startingDate, special, introduction, username, password) VALUES ('Jossu', '2015-07-03', 'Opiskelijatyöt', 'Noobi', 'munkki2', 'pulla2');
+INSERT INTO Employee (name, startingDate, special, introduction, management) VALUES ('Elmo', '2011-06-22', 'Värjäys', 'Pehmo', 'true', 'munkki3', 'pulla3');
 
 
 INSERT INTO Service (name, price, description) VALUES ('Hiustenleikkuu - Lyhyet', '15', 'Lyhyiden hiusten leikkuu ja mallin palautus');

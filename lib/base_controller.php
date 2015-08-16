@@ -3,7 +3,14 @@
   class BaseController{
 
     public static function get_user_logged_in(){
-      // Toteuta kirjautuneen käyttäjän haku tähän
+      if(isset($_SESSION['employee'])) {
+          $employee_id = $_SESSION['employee'];
+          
+          $employee = Employee::find($id);
+          
+          return $employee;
+          
+      }
       return null;
     }
 
@@ -13,3 +20,5 @@
     }
 
   }
+
+  
