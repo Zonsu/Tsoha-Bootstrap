@@ -17,15 +17,17 @@
         <tr>
             <td><a href="{{base_path}}/palvelut/{{service.id}}">{{service.name}}</a></td>
             <td>{{service.price}}</td>
-<!--            <td><a href="{{base_path}}/palvelut/{{service.id}}/edit" class="btn btn-default btn-xs">Muokkaa</a>
-                <a href="{{base_path}}/palvelut/{{service.id}}/delete" class="btn btn-default btn-xs">Poista</a>
-            </td>-->
+            <!--            <td><a href="{{base_path}}/palvelut/{{service.id}}/edit" class="btn btn-default btn-xs">Muokkaa</a>
+                            <a href="{{base_path}}/palvelut/{{service.id}}/delete" class="btn btn-default btn-xs">Poista</a>
+                        </td>-->
         </tr>
         {% endfor %}
     </tbody>
 </table>
 
+{% if user_logged_in.management == true %}
 <p>
     <a href="{{base_path}}/palvelut/new" class="btn btn-default">Lisää Palvelu</a>
 </p>
+{% endif %}
 {% endblock %}
