@@ -1,6 +1,6 @@
 <?php
 
-//navigaatio linkit
+//navigaatio
 
 $routes->get('/', function() {
     SiteController::index();
@@ -54,7 +54,7 @@ $routes->post('/palvelut/:id/destroy', function($id) {
 });
 
 
-//login
+//login & logout
 
 $routes->post('/employeelogin', function() {
     EmployeeController::employee_login();
@@ -64,7 +64,9 @@ $routes->get('/employee/login', function() {
     EmployeeController::employee_login_page();
 });
 
-
+$routes->post('/logout', function(){
+    SiteController::logout();
+});
 
 
 

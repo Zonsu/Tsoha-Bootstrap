@@ -8,8 +8,18 @@
         <li><a href="{{base_path}}/henkilokunta">Henkilökunta</a></li>
         <li><a href="{{base_path}}/varaa">Vapaat ajat</a></li>
 
+        {%if user_logged_in %}
+
+        <li><a href="{{base_path}}/emloyee/{id}">Omat tiedot</a></li>
+        <li><a href="{{base_path}}/logout">Kirjaudu ulos</a></li>
+
+        {%else%}
+        
         <li><a href="{{base_path}}/rekisteroidy">Rekisteröidy</a></li>
         <li><a href="{{base_path}}/kirjaudu">Kirjaudu</a></li>
+
+
+        {%endif%}
     </div>
 </ul>
 

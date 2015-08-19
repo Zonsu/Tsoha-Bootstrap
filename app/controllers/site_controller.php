@@ -29,4 +29,9 @@ class SiteController extends BaseController {
         View::make('workhours/index.html');
     }
 
+    public static function logout() {
+        $_SESSION['user'] = null;
+        Redirect::to('/kirjaudu', array('message' => 'Olet kirjautunut ulos!'));
+    }
+
 }
