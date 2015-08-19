@@ -10,13 +10,19 @@
 
         {%if user_logged_in %}
 
-        <li><a href="{{base_path}}/emloyee/{id}">Omat tiedot</a></li>
-        <li><a href="{{base_path}}/logout">Kirjaudu ulos</a></li>
+        <li><a href="{{base_path}}/">Omat tiedot</a></li>
+
+<!--        <p>{{user_logged_in.name}}</p>   -->
+        <form class="navbar-form" method="post" action="{{base_path}}/logout">
+            <button type="submit" class="btn btn-default btn-xs">Kirjaudu ulos</button>
+        </form>
 
         {%else%}
-        
+
         <li><a href="{{base_path}}/rekisteroidy">Rekisteröidy</a></li>
-        <li><a href="{{base_path}}/kirjaudu">Kirjaudu</a></li>
+        <form class="navbar-form" action="{{base_path}}/kirjaudu">
+            <button type="submit" class="btn btn-default btn-xs">Kirjaudu</button>
+        </form>
 
 
         {%endif%}
