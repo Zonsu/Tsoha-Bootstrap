@@ -30,7 +30,7 @@ class SiteController extends BaseController {
     }
 
     public static function logout() {
-        $_SESSION['user'] = null;
+        unset($_SESSION['employee']);
         Redirect::to('/kirjaudu', array('message' => 'Olet kirjautunut ulos!'));
     }
 
