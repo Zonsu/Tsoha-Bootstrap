@@ -84,6 +84,7 @@ class Service extends BaseModel {
     }
 
     public function validate_description() {
+        
         $metodi = 'validate_string_length';
         $errors = $this->$metodi('Kuvaus', $this->description, 5);
 

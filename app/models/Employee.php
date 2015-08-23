@@ -6,6 +6,7 @@ class Employee extends BaseModel {
 
     public function __construct($attributes) {
         parent::__construct($attributes);
+        $this->validators = array('validate_name', 'validate_special', 'validate_introduction', 'validate_password', 'validate_username');
     }
 
     public static function authenticate($username, $password) {
@@ -48,6 +49,31 @@ class Employee extends BaseModel {
         return $employee;
     }
 
+    public static function findByUsername($username) {
+
+        $query = DB::connection()->prepare('SELECT * FROM Employee WHERE username = :username LIMIT 1');
+
+        $query->execute(array('username' => $username));
+        $row = $query->fetch();
+
+        if ($row) {
+            $employee = Employee::createEmployee($row);
+        }
+        return $employee;
+    }
+
+    public function update() {
+        $query = DB::connection()->prepare('UPDATE Employee SET name =:name, special=:special, introduction=:introduction, management=:management, username:=username, password:=password WHERE id=:id');
+
+        $query->execute(array('name' => $this->name, 'special' => $this->special, 'introduction' => $this->introducion, 'management' => $this->management, 'username' => $this->username, 'password' => $this->password, 'id' => $this->id));
+    }
+
+    public function destroy($id) {
+        $query = DB::connection()->prepare('DELETE FROM Employee WHERE id = :id');
+        $query->execute(array(
+            'id' => $id));
+    }
+
     public static function createEmployee($row) {
 
         $employee = new Employee(array(
@@ -61,6 +87,49 @@ class Employee extends BaseModel {
             'password' => $row['password']
         ));
         return $employee;
+    }
+
+    public function validate_name() {
+
+        $metodi = 'validate_string_length';
+        $errors = $this->$metodi('Nimi', $this->name, 3);
+
+        return $errors;
+    }
+
+    public function validate_introduction() {
+        $metodi = 'validate_string_length';
+        $errors = $this->$metodi('Esittely', $this->introduction, 5);
+
+        return $errors;
+    }
+
+    public function validate_password() {
+        $metodi = 'validate_string_length';
+        $errors = $this->$metodi('Salasana', $this->password, 5);
+
+        return $errors;
+    }
+
+    public function validate_special() {
+        $metodi = 'validate_string_length';
+        $errors = $this->$metodi('Hinta', $this->special, 5);
+
+        return $errors;
+    }
+
+    public function validate_username() {
+        $errors = array();
+
+        $metodi = 'validate_string_length';
+        $errors[] = $this->$metodi('Käyttäjänimi', $this->username, 5);
+
+        $user_validate = 'findByUsername';
+        if ($this->$user_validate($this->$username) != NULL) {
+            $errors[] = 'Käyttäjänimi on jo käytössä';
+        }
+
+        return $errors;
     }
 
 }
