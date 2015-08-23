@@ -6,6 +6,22 @@ class EmployeeController extends BaseController {
         View::make('login/index.html');
     }
 
+    public static function index() {
+        $employees = Employee::all();
+
+        View::make('employee/index.html', array('employees' => $employees));
+    }
+
+    public static function show($id) {
+        $employee = Employee::find($id);
+
+        View::make('employee/show.html', array('employee' => $employee));
+    }
+
+    public static function create() {
+        View::make('emloyee/new.html');
+    }
+
     public static function employee_login() {
         $params = $_POST;
 
