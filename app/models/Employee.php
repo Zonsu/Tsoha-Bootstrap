@@ -2,7 +2,7 @@
 
 class Employee extends BaseModel {
 
-    public $id, $name, $startingDate, $special, $introducion, $management, $username, $password;
+    public $id, $name, $special, $introduction, $management, $username, $password;
 
     public function __construct($attributes) {
         parent::__construct($attributes);
@@ -79,7 +79,6 @@ class Employee extends BaseModel {
         $employee = new Employee(array(
             'id' => $row['id'],
             'name' => $row['name'],
-//            'startingDate' => $row['startingDate'],
             'special' => $row['special'],
             'introduction' => $row['introduction'],
             'management' => $row['management'],

@@ -1,6 +1,31 @@
 {% extends "frame.html" %}
 {% block content %}
 
-<p>Työntekijät</p>
+<p><strong>Työntekijät</strong></p>
+<p>Löydät lisää tietoa klikkaamalla työntekijät nimeä</p>
 
+
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Nimi</th>
+            <th>Erikoistunut</th>
+        </tr>
+    </thead>
+    {% for employee in employees %}
+    <tr>
+        <td><a href="{{base_path}}/tyontekijat/{{employee.id}}">{{employee.name}}</a></td>
+        <td>{{employee.special}}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+{% if user_logged_in.management == true %}
+<p>
+    <a href="{{base_path}}/tyontekijat/new" class="btn btn-default">Uusi työntekijä</a>
+</p>
+{% endif %}
 {% endblock %}

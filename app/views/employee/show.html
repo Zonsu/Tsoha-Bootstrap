@@ -1,0 +1,26 @@
+
+{% extends "frame.html" %}
+{% block content %}
+{% import "macros/forms.html" as forms %}
+<div>
+    <div class="message">{{message}}</div>
+
+    <div><a href="{{base_path}}/tyontekijat" class="btn btn-default btn-xs nappula"><< Takaisin</a></div>
+
+    <div>
+        <p><strong>Työntekijä:</strong> {{employee.name}}</p>
+        <p><strong>Palvelut:</strong> Tähän listataan näitä ehkä kohta</p>
+        <p><strong>Erikoistunut:</strong> {{employee.special}}</p>
+        <p><strong>Esittely:</strong> {{employee.introduction}}</p>
+
+    </div>
+
+    {% if user_logged_in.management == true %}
+    <div>
+        <a href="{{base_path}}/tyontekijat/{{service.id}}/edit" class="btn btn-info btn-xs nappula">Muokkaa</a>        
+        {{forms.destroy_button("#{base_path}/tyontekijat/#{employee.id}/destroy")}}
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

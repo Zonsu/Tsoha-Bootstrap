@@ -6,8 +6,8 @@ $routes->get('/', function() {
     SiteController::index();
 });
 
-$routes->get('/henkilokunta', function() {
-    SiteController::employee();
+$routes->get('/tyontekijat', function() {
+    EmployeeController::index();
 });
 
 $routes->get('/kirjaudu', function() {
@@ -49,9 +49,34 @@ $routes->post('/palvelut/:id/edit', function($id) {
 });
 
 $routes->post('/palvelut/:id/destroy', function($id) {
-    print("asdads");
     ServiceController::destroy($id);
 });
+
+//employee
+
+$routes->post('/tyontekijat/store', function() {
+    EmployeeController::store();
+});
+
+$routes->get('/tyontekijat/new', function() {
+    EmployeeController::create();
+});
+
+$routes->get('/tyontekijat/:id', function($id) {
+    EmployeeController::show($id);
+});
+
+$routes->get('/tyontekijat/:id/edit', function($id) {
+    EmployeeController::edit($id);
+});
+$routes->post('/tyontekijat/:id/edit', function($id) {
+    EmployeeController::update($id);
+});
+
+$routes->post('/tyontekijat/:id/destroy', function($id) {
+    EmployeeController::destroy($id);
+});
+
 
 
 //login & logout

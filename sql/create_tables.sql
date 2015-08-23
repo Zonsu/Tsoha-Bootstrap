@@ -2,7 +2,6 @@
 CREATE TABLE Employee(
 id SERIAL PRIMARY KEY,
 name varchar(30) NOT NULL,
-startingDate DATE,
 special varchar(120),
 introduction varchar(500),
 management boolean DEFAULT FALSE,
