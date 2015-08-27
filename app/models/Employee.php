@@ -6,7 +6,7 @@ class Employee extends BaseModel {
 
     public function __construct($attributes) {
         parent::__construct($attributes);
-        $this->validators = array('validate_name', 'validate_special', 'validate_introduction', 'validate_password', 'validate_username');
+        $this->validators = array('validate_name', 'validate_special', 'validate_introduction');
     }
 
     public static function authenticate($username, $password) {
@@ -60,6 +60,16 @@ class Employee extends BaseModel {
             $employee = Employee::createEmployee($row);
         }
         return $employee;
+    }
+
+    public function save() {
+        $query = DB::connection()->prepare('INSERT INTO Employee (name, special, introduction) VALUES (:name, :special, :introduction) RETURNING id');
+
+        $query->execute(array('name' => $this->name, 'special' => $this->special, 'introduction' => $this->introduction));
+
+        $row = $query->fetch();
+
+        $this->id = $row['id'];
     }
 
     public function update() {
