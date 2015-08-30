@@ -14,6 +14,12 @@
 
     </div>
 
+
+    {% for employee in offeredServices %}
+    {{ employee.name }}
+    {% endfor %}
+
+
     {% if user_logged_in.management == true %}
     <div>
         <a href="{{base_path}}/palvelut/{{service.id}}/edit" class="btn btn-info btn-xs nappula">Muokkaa</a>        

@@ -10,8 +10,9 @@ class ServiceController extends BaseController {
 
     public static function show($id) {
         $service = Service::find($id);
+        $offeredServices = OfferedServices::findByService($id);
 
-        View::make('service/show.html', array('service' => $service));
+        View::make('service/show.html', array('service' => $service, 'offeredServices' => $offeredServices));
     }
 
     public static function create() {
