@@ -36,15 +36,32 @@
             <textarea name="description" class="form-control">{{attributes.description}}</textarea>
         </div>
 
+        {% for employee in employees %}
+        {% if employee in employeeList %}
+
         <div class="checkbox">
             <label>
-
-                <input type="checkbox">
-                Työntekijä
+                <input type="checkbox" name="{{employee.id}}" value="{{employee.id}}" checked>
+                {{employee.name}}
 
             </label>
-            <strong>Ei vielä käytössä :( </strong>
         </div>
+
+        {% else %}
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="{{employee.id}}" value="{{employee.id}}">
+                {{employee.name}}
+
+            </label>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        <!--        {% for test in offeredServices%}
+                {{test.name}}
+                {%endfor%}-->
 
         <div class="form-group">
             <button type="submit" class="btn btn-info">Tallenna</button>

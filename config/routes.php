@@ -15,7 +15,7 @@ $routes->get('/kirjaudu', function() {
 });
 
 $routes->get('/rekisteroidy', function() {
-    SiteController::register();
+    ClientController::create();
 });
 
 $routes->get('/varaa', function() {
@@ -89,11 +89,23 @@ $routes->get('/employee/login', function() {
     EmployeeController::employee_login_page();
 });
 
-$routes->post('/logout', function(){
+$routes->post('/logout', function() {
     SiteController::logout();
 });
 
+$routes->post('/userlogin', function() {
+    ClientController::client_login();
+});
 
+//client
+
+$routes->post('/asiakkaat/store', function() {
+    ClientController::store();
+});
+
+$routes->get('/asiakkaat/omattiedot', function() {
+    ClientController::show();
+});
 
 
 

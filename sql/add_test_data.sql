@@ -19,7 +19,7 @@ INSERT INTO Offered_Services (employeeID, serviceID) VALUES ('4', '4');
 
 DELETE FROM Employee WHERE id = 2;
 
-INSERT INTO Client (firstName, lastName, email, phoneNumber) VALUES ('pöllö', 'pöllönen', 'asd@asd.asd', '12312313');
+INSERT INTO Client (firstName, lastName, username, password) VALUES ('pöllö', 'pöllönen', 'pulla', 'munkki');
 
 
 

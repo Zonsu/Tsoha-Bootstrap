@@ -73,9 +73,9 @@ class Employee extends BaseModel {
     }
 
     public function update() {
-        $query = DB::connection()->prepare('UPDATE Employee SET name =:name, special=:special, introduction=:introduction, management=:management, username:=username, password:=password WHERE id=:id');
+        $query = DB::connection()->prepare('UPDATE Employee SET name =:name, special=:special, introduction=:introduction WHERE id=:id');
 
-        $query->execute(array('name' => $this->name, 'special' => $this->special, 'introduction' => $this->introducion, 'management' => $this->management, 'username' => $this->username, 'password' => $this->password, 'id' => $this->id));
+        $query->execute(array('name' => $this->name, 'special' => $this->special, 'introduction' => $this->introduction, 'id' => $this->id));
     }
 
     public function destroy($id) {
@@ -140,5 +140,16 @@ class Employee extends BaseModel {
 
         return $errors;
     }
+
+    public function getId() {
+        return $this->id;
+    }
+
+//    public static function compare(&$obj1, &$obj2) {
+//        if ($obj1->id != $obj2->id) {
+//            return 0;
+//        }
+//        return 1;
+//    }
 
 }

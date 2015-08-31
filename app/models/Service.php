@@ -84,7 +84,7 @@ class Service extends BaseModel {
     }
 
     public function validate_description() {
-        
+
         $metodi = 'validate_string_length';
         $errors = $this->$metodi('Kuvaus', $this->description, 5);
 
@@ -96,6 +96,17 @@ class Service extends BaseModel {
         $errors = $this->$metodi('Hinta', $this->price);
 
         return $errors;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+    
+    public static function compare(&$obj1, &$obj2) {
+        if ($obj1->id != $obj2->id) {
+            return 0;
+        }
+        return 1;
     }
 
 }

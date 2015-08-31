@@ -27,8 +27,6 @@ CREATE TABLE Client(
 ID SERIAL PRIMARY KEY,
 firstName varchar(30) NOT NULL,
 lastName varchar(30) NOT NULL,
-email varchar(30) NOT NULL,
-phoneNumber varchar(20) NOT NULL,
 username varchar(20),
 password varchar(50)
 );

@@ -5,19 +5,22 @@
 <div>
     <div class="message">{{message}}</div>
 
-    <div><a href="{{base_path}}/palvelut" class="btn btn-default btn-xs nappula"><< Takaisin</a></div>
+    <div><a href="{{base_path}}/palvelut" class="btn btn-default btn-xs nappula"><< Palvelulistaan</a></div>
 
     <div>
         <p><strong>Palvelu:</strong> {{service.name}}</p>
         <p><strong>Palvelun hinta:</strong> {{service.price}} euroa</p>
         <p><strong>Palvelun kuvaus:</strong> {{service.description}}</p>
-
+        <p><strong>Tätä palvelua tarjoavat:</strong>     
+            
+            {% for employee in offeredServices %}
+            <a href="{{base_path}}/tyontekijat/{{employee.id}}">{{employee.name}} </a>
+            {% if not loop.last %},{% endif %}
+            {% endfor %}</p>
     </div>
 
 
-    {% for employee in offeredServices %}
-    {{ employee.name }}
-    {% endfor %}
+
 
 
     {% if user_logged_in.management == true %}

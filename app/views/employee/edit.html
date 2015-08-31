@@ -16,7 +16,7 @@
     </div>
     {% endif %}
 
-    <form method ="post" action="{{base_path}}/tyontekijat/store">
+    <form method ="post" action="{{base_path}}/tyontekijat/{{attributes.id}}/edit">
 
         <div class="form-group">
             <label>Työntekijän nimi</label>
@@ -37,21 +37,28 @@
         </div>
 
         <br>Valitse listasta työntekijän osaamista vastaavat palvelut.
-        <div class="checkbox">
-            <label>
-
-                <input type="checkbox">
-                Palvelu
-            </label>
-        </div>
+        {% for service in services %}
+        {% if service in serviceList %}
 
         <div class="checkbox">
             <label>
+                <input type="checkbox" name="{{service.id}}" value="{{service.id}}" checked>
+                {{service.name}}
 
-                <input type="checkbox">
-                Palvelu
             </label>
         </div>
+
+        {% else %}
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="{{service.id}}" value="{{service.id}}">
+                {{service.name}}
+
+            </label>
+        </div>
+        {% endif %}
+        {% endfor %}
 
         <div class="form-group">
             <button type="submit" class="btn btn-info">Tallenna</button>

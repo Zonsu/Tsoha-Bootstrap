@@ -37,21 +37,16 @@
         </div>
 
         <br>Valitse listasta työntekijän osaamista vastaavat palvelut.
-        <div class="checkbox">
-            <label>
-
-                <input type="checkbox">
-                Palvelu
-            </label>
-        </div>
+        {% for service in services %}
 
         <div class="checkbox">
             <label>
+                <input type="checkbox" name="{{service.id}}" value="{{service.id}}">
+                {{service.name}}
 
-                <input type="checkbox">
-                Palvelu
             </label>
         </div>
+        {% endfor %}
 
         <div class="form-group">
             <button type="submit" class="btn btn-info">Tallenna</button>
