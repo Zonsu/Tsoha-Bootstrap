@@ -36,15 +36,17 @@
             <textarea name="description" class="form-control">{{attributes.description}}</textarea>
         </div>
 
+        <p>Valitse listasta palvelua tarjoavat henkilöt</p>
+        {% for employee in employees %}
+
         <div class="checkbox">
             <label>
-
-                <input type="checkbox">
-                Työntekijä
+                <input type="checkbox" name="{{employee.id}}" value="{{employee.id}}">
+                {{employee.name}}
 
             </label>
-            <strong>Ei vielä käytössä :( </strong>
         </div>
+        {% endfor %}
 
         <div class="form-group">
             <button type="submit" class="btn btn-info">Tallenna</button>

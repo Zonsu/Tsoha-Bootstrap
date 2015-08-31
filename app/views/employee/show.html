@@ -5,19 +5,24 @@
 <div>
     <div class="message">{{message}}</div>
 
-    <div><a href="{{base_path}}/tyontekijat" class="btn btn-default btn-xs nappula"><< Takaisin</a></div>
+    <div><a href="{{base_path}}/tyontekijat" class="btn btn-default btn-xs nappula"><< Henkilökuntalista</a></div>
 
     <div>
         <p><strong>Työntekijä:</strong> {{employee.name}}</p>
-        <p><strong>Palvelut:</strong> Tähän listataan näitä ehkä kohta</p>
         <p><strong>Erikoistunut:</strong> {{employee.special}}</p>
         <p><strong>Esittely:</strong> {{employee.introduction}}</p>
+        <p><strong>Tarjottavat palvelut:</strong>     
+
+            {% for service in services %}
+            <a href="{{base_path}}/palvelut/{{service.id}}">{{service.name}} </a>
+            {% if not loop.last %},{% endif %}
+            {% endfor %}</p>
 
     </div>
 
     {% if user_logged_in.management == true %}
     <div>
-        <a href="{{base_path}}/tyontekijat/{{service.id}}/edit" class="btn btn-info btn-xs nappula">Muokkaa</a>        
+        <a href="{{base_path}}/tyontekijat/{{employee.id}}/edit" class="btn btn-info btn-xs nappula">Muokkaa</a>        
         {{forms.destroy_button("#{base_path}/tyontekijat/#{employee.id}/destroy")}}
     </div>
     {% endif %}

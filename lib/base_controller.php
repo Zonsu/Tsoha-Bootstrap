@@ -13,9 +13,15 @@ class BaseController {
         return null;
     }
 
-    public static function check_logged_in() {
+    public static function check_employee_logged_in() {
         if (!isset($_SESSION['employee'])) {
-            Redirect::to('/login', array('message' => 'Kirjaudu ensin sisään!'));
+            Redirect::to('/kirjaudu', array('message' => 'Kirjaudu ensin sisään!'));
+        }
+    }
+
+    public static function check_client_logged_in() {
+        if (!isset($_SESSION['client'])) {
+            Redirect::to('/kirjaudu', array('message' => 'Kirjaudu ensin asiakastunnuksella sisään!'));
         }
     }
 
